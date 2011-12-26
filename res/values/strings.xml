@@ -114,6 +114,10 @@
     <string name="pref_video_quality_entry_720p" translatable="false">HD</string>
     <!-- Video quality setting entry. Videos will be recorded in 480p quality. [CHAR LIMIT=24] -->
     <string name="pref_video_quality_entry_480p" translatable="false">SD</string>
+    <!-- star add -->
+    <string name="pref_video_quality_entry_high" translatable="false">HD</string>
+    <!-- star add -->
+    <string name="pref_video_quality_entry_low" translatable="false">SD</string>
 
     <!-- Describes the preference dialog for choosing interval between frame capture for
     time lapse recording. Appears at top of the dialog. [CHAR LIMIT=30] -->
@@ -141,6 +145,7 @@
     <string name="pref_camera_picturesize_entry_2592x1936">5M Pixels</string>
     <string name="pref_camera_picturesize_entry_2048x1536">3M Pixels</string>
     <string name="pref_camera_picturesize_entry_1600x1200">2M Pixels</string>
+    <string name="pref_camera_picturesize_entry_1280x1024">1280x1024</string>
     <string name="pref_camera_picturesize_entry_1280x960">1.3M Pixels</string>
     <string name="pref_camera_picturesize_entry_1024x768">1M Pixels</string>
     <string name="pref_camera_picturesize_entry_640x480">VGA</string>

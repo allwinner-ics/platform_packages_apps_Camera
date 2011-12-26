@@ -88,7 +88,25 @@ public class CameraSettings {
         if (CamcorderProfile.hasProfile(cameraId, quality)) {
             return defaultQuality;
         }
-        return Integer.toString(CamcorderProfile.QUALITY_HIGH);
+		if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_HIGH)) {
+            return Integer.toString(CamcorderProfile.QUALITY_HIGH);
+        }
+		if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_LOW)) {
+            return Integer.toString(CamcorderProfile.QUALITY_LOW);
+        }
+		if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_1080P)) {
+            return Integer.toString(CamcorderProfile.QUALITY_1080P);
+        }
+		if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_480P)) {
+            return Integer.toString(CamcorderProfile.QUALITY_480P);
+        }
+		if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_QVGA)) {
+            return Integer.toString(CamcorderProfile.QUALITY_QVGA);
+        }
+		if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_QCIF)) {
+            return Integer.toString(CamcorderProfile.QUALITY_QCIF);
+        }
+        return Integer.toString(0);
     }
 
     public static void initialCameraPictureSize(
@@ -469,6 +487,12 @@ public class CameraSettings {
         }
         if (CamcorderProfile.hasProfile(mCameraId, CamcorderProfile.QUALITY_480P)) {
             supported.add(Integer.toString(CamcorderProfile.QUALITY_480P));
+        }
+		if (CamcorderProfile.hasProfile(mCameraId, CamcorderProfile.QUALITY_HIGH)) {
+            supported.add(Integer.toString(CamcorderProfile.QUALITY_HIGH));
+        }
+		if (CamcorderProfile.hasProfile(mCameraId, CamcorderProfile.QUALITY_LOW)) {
+            supported.add(Integer.toString(CamcorderProfile.QUALITY_LOW));
         }
 
         return supported;

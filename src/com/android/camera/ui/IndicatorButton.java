@@ -57,6 +57,10 @@ public class IndicatorButton extends AbstractIndicatorButton implements BasicSet
             int index;
             if (mOverrideValue == null) {
                 index = mPreference.findIndexOfValue(mPreference.getValue());
+				if(index < 0) {
+					Log.w(TAG, "do not support 720p setting, use another");
+					index = 0;
+				}
             } else {
                 index = mPreference.findIndexOfValue(mOverrideValue);
                 if (index == -1) {

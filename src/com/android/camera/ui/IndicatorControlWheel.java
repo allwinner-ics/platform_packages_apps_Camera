@@ -241,7 +241,7 @@ public class IndicatorControlWheel extends IndicatorControl implements
             // range and not for other indicator buttons.
             if ((mCurrentLevel == 0) && (mZoomControl != null)) return 0;
         }
-        return -1;
+        return 0;
     }
 
     private void injectMotionEvent(int viewIndex, MotionEvent event, int action) {

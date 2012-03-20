@@ -91,6 +91,11 @@ public class ModePicker extends RelativeLayout implements View.OnClickListener,
         mModeSelectionIcon[MODE_CAMERA] =
                 (RotateImageView) findViewById(R.id.mode_camera);
 
+		// back camera
+		if(CameraHolder.instance().getBackCameraId() == -1) {
+			mModeSelectionIcon[MODE_PANORAMA].setVisibility(View.GONE);
+		}
+		
         // The current mode frame is for Phone UI only.
         mCurrentModeFrame = findViewById(R.id.current_mode);
         if (mCurrentModeFrame != null) {

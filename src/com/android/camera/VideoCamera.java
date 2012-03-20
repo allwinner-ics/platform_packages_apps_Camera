@@ -837,6 +837,10 @@ public class VideoCamera extends ActivityBase
                 mIndicatorControlContainer.reloadPreferences();
             }
             try {
+                // fix bug of home/back zoom slide wrong position
+                mZoomControl.startZoomControl();
+                mZoomControl.closeZoomControl();
+				
                 mCameraDevice = Util.openCamera(this, mCameraId);
                 readVideoPreferences();
                 resizeForPreviewAspectRatio();
@@ -2083,6 +2087,10 @@ public class VideoCamera extends ActivityBase
             mZoomValue = 0;
             setCameraParameters();
             mZoomControl.setZoomIndex(0);
+
+            // fix bug of restore zoom slide wrong position
+            mZoomControl.startZoomControl();
+            mZoomControl.closeZoomControl();
         }
 
         if (mIndicatorControlContainer != null) {

@@ -1539,6 +1539,10 @@ public class Camera extends ActivityBase implements FocusManager.Listener,
         // Start the preview if it is not started.
         if (mCameraState == PREVIEW_STOPPED) {
             try {
+                // fix bug of home/back zoom slide wrong position
+                mZoomControl.startZoomControl();
+                mZoomControl.closeZoomControl();
+
                 mCameraDevice = Util.openCamera(this, mCameraId);
                 initializeCapabilities();
                 resetExposureCompensation();
@@ -2266,6 +2270,10 @@ public class Camera extends ActivityBase implements FocusManager.Listener,
             mZoomValue = 0;
             setCameraParametersWhenIdle(UPDATE_PARAM_ZOOM);
             mZoomControl.setZoomIndex(0);
+
+            // fix bug of restore zoom slide wrong position
+            mZoomControl.startZoomControl();
+            mZoomControl.closeZoomControl();
         }
         if (mIndicatorControlContainer != null) {
             mIndicatorControlContainer.dismissSettingPopup();

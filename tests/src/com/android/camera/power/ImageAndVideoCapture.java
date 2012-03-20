@@ -59,7 +59,7 @@ public class ImageAndVideoCapture extends ActivityInstrumentationTestCase2 <Came
     protected void tearDown() throws Exception {
         super.tearDown();
     }
-
+/*
     @LargeTest
     public void testLaunchCamera() {
         // This test case capture the baseline for the image preview.
@@ -70,7 +70,7 @@ public class ImageAndVideoCapture extends ActivityInstrumentationTestCase2 <Came
             assertTrue("testImageCaptureDoNothing", false);
         }
     }
-
+    */
     @LargeTest
     public void testCapture5Image() {
         // This test case will use the default camera setting
